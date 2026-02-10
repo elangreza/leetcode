@@ -39,6 +39,20 @@ func Test_romanToInt(t *testing.T) {
 			},
 			want: 1476,
 		},
+		{
+			name: "",
+			args: args{
+				s: "XXVII",
+			},
+			want: 27,
+		},
+		{
+			name: "",
+			args: args{
+				s: "MCMXCIX",
+			},
+			want: 1999,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
