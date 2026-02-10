@@ -16,12 +16,28 @@ func Test_addTwoNumbers(t *testing.T) {
 		want *ListNode
 	}{
 		{
-			name: "",
+			name: "first",
 			args: args{
 				l1: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3}}},
 				l2: &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}},
 			},
 			want: &ListNode{Val: 7, Next: &ListNode{Val: 0, Next: &ListNode{Val: 8}}},
+		},
+		{
+			name: "second",
+			args: args{
+				l1: &ListNode{Val: 0},
+				l2: &ListNode{Val: 0},
+			},
+			want: &ListNode{Val: 0},
+		},
+		{
+			name: "third",
+			args: args{
+				l1: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}}}}},
+				l2: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}},
+			},
+			want: &ListNode{Val: 8, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 1}}}}}}}},
 		},
 	}
 	for _, tt := range tests {
