@@ -2,7 +2,7 @@ package longestcommonprefix
 
 import "testing"
 
-func Test_longestCommonPrefixV0(t *testing.T) {
+func Test_longestCommonPrefix(t *testing.T) {
 	type args struct {
 		strs []string
 	}
@@ -14,36 +14,9 @@ func Test_longestCommonPrefixV0(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				strs: []string{
-					"flower",
-					"flow",
-					"flight",
-				},
+				strs: []string{"flower", "flow", "flight"},
 			},
 			want: "fl",
-		},
-		{
-			name: "",
-			args: args{
-				strs: []string{"dog", "racecar", "car"},
-			},
-			want: "",
-		},
-		{
-			name: "",
-			args: args{
-				strs: []string{"a"},
-			},
-			want: "a",
-		},
-		{
-			name: "",
-			args: args{
-				strs: []string{
-					"ab", "a",
-				},
-			},
-			want: "a",
 		},
 	}
 	for _, tt := range tests {

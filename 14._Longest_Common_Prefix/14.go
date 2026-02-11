@@ -1,6 +1,6 @@
 package longestcommonprefix
 
-func longestCommonPrefix(strs []string) string {
+func longestCommonPrefixV0(strs []string) string {
 	if len(strs) == 1 {
 		return strs[0]
 	}

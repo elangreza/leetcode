@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEndV0(head *ListNode, n int) *ListNode {
 	if head == nil {
 		return nil
 	}
