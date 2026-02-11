@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_mergeTwoListsV0(t *testing.T) {
+func Test_mergeTwoLists(t *testing.T) {
 	type args struct {
 		list1 *ListNode
 		list2 *ListNode
@@ -19,16 +19,19 @@ func Test_mergeTwoListsV0(t *testing.T) {
 			name: "",
 			args: args{
 				list1: &ListNode{
-					Val: 1,
+					Val: 2,
 					Next: &ListNode{
-						Val:  2,
-						Next: nil,
+						Val: 3,
+						Next: &ListNode{
+							Val:  5,
+							Next: nil,
+						},
 					},
 				},
 				list2: &ListNode{
 					Val: 1,
 					Next: &ListNode{
-						Val:  3,
+						Val:  2,
 						Next: nil,
 					},
 				},
@@ -36,12 +39,15 @@ func Test_mergeTwoListsV0(t *testing.T) {
 			want: &ListNode{
 				Val: 1,
 				Next: &ListNode{
-					Val: 1,
+					Val: 2,
 					Next: &ListNode{
 						Val: 2,
 						Next: &ListNode{
-							Val:  3,
-							Next: nil,
+							Val: 3,
+							Next: &ListNode{
+								Val:  5,
+								Next: nil,
+							},
 						},
 					},
 				},
@@ -51,6 +57,7 @@ func Test_mergeTwoListsV0(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := mergeTwoLists(tt.args.list1, tt.args.list2); !reflect.DeepEqual(got, tt.want) {
+				got.print()
 				t.Errorf("mergeTwoLists() = %v, want %v", got, tt.want)
 			}
 		})

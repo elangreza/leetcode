@@ -7,7 +7,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+func mergeTwoListsV0(list1 *ListNode, list2 *ListNode) *ListNode {
 	res := &ListNode{}
 	curr := res
 
