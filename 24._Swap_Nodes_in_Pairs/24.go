@@ -2,10 +2,10 @@ package swapnodesinpairs
 
 import "fmt"
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
 
 // 1 2 3 4 5 6
 // c d
@@ -17,7 +17,7 @@ type ListNode struct {
 
 // 2 1 4 3 6 5
 
-func swapPairs(head *ListNode) *ListNode {
+func swapPairsV0(head *ListNode) *ListNode {
 	if head != nil && head.Next == nil {
 		return head
 	}

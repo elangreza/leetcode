@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_swapPairsV0(t *testing.T) {
+func Test_swapPairs(t *testing.T) {
 	type args struct {
 		head *ListNode
 	}
@@ -24,8 +24,11 @@ func Test_swapPairsV0(t *testing.T) {
 						Next: &ListNode{
 							Val: 3,
 							Next: &ListNode{
-								Val:  4,
-								Next: nil,
+								Val: 4,
+								Next: &ListNode{
+									Val:  5,
+									Next: nil,
+								},
 							},
 						},
 					},
@@ -38,8 +41,11 @@ func Test_swapPairsV0(t *testing.T) {
 					Next: &ListNode{
 						Val: 4,
 						Next: &ListNode{
-							Val:  3,
-							Next: nil,
+							Val: 3,
+							Next: &ListNode{
+								Val:  5,
+								Next: nil,
+							},
 						},
 					},
 				},
@@ -49,6 +55,8 @@ func Test_swapPairsV0(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := swapPairs(tt.args.head); !reflect.DeepEqual(got, tt.want) {
+				got.print()
+
 				t.Errorf("swapPairs() = %v, want %v", got, tt.want)
 			}
 		})
