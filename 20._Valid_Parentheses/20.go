@@ -1,6 +1,6 @@
 package validparentheses
 
-func isValid(s string) bool {
+func isValidV0(s string) bool {
 
 	if len(s) <= 1 {
 		return false
