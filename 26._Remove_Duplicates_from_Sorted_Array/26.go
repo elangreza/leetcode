@@ -2,7 +2,7 @@ package removeduplicatesfromsortedarray
 
 import "fmt"
 
-func removeDuplicates(nums []int) int {
+func removeDuplicatesV0(nums []int) int {
 	if len(nums) == 1 {
 		return 1
 	}
