@@ -11,20 +11,20 @@ func Test_isValid(t *testing.T) {
 		args args
 		want bool
 	}{
-		{
-			name: "",
-			args: args{
-				s: "([])",
-			},
-			want: true,
-		},
 		// {
 		// 	name: "",
 		// 	args: args{
-		// 		s: "([)]",
+		// 		s: "([])",
 		// 	},
-		// 	want: false,
+		// 	want: true,
 		// },
+		{
+			name: "",
+			args: args{
+				s: "]",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
